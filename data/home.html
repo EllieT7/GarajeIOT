@@ -21,18 +21,18 @@
     <nav class="sidebar-navigation">
       <ul>
         <li>
-          <i class="fa fa-share-alt"></i>
-          <span class="tooltip">Connections</span>
+          <i class="fa fa-house"></i>
+          <span class="tooltip">Inicio</span>
           
         </li>
         <li class="active">
-          <i class="fa fa-hdd-o"></i>
+          <i class="fa fa-square"></i>
           <div class="indicador"></div>
-          <span class="tooltip">Devices</span>
+          <span class="tooltip">Dashboard</span>
         </li>
         <li>
-          <i class="fa fa-newspaper-o"></i>
-          <span class="tooltip">Contacts</span>
+          <i class="fa fa-file"></i>
+          <span class="tooltip">Reportes</span>
         </li>
       </ul>
     </nav>
@@ -52,9 +52,7 @@
     <script>
       $('ul li').on('click', function() {
         $('li').removeClass('active');
-        $('.indicador').visible = false;
         $(this).addClass('active');
-        $(this).find('.indicador').visible = true;
       });
     </script>
   </body>
