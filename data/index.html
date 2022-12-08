@@ -1,60 +1,97 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Proyecto</title>
-    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/png" href="icon.png">
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./index.css"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous"/>
+    <title>Garaje inteligente</title>
   </head>
-  <body style="background: #52CDE9 !important;">
-    <!--Titulo y conexión WiFi-->
-    <header>
-      <img src="https://raw.githubusercontent.com/MicaelaGordillo/IOT_2/main/EjemploST_3/images/logo/myn.png" alt="logo">
-      <div id="contenedor" style="display: grid;position: absolute; top: 10px;right: 0; width: 200px;">
-        <img id="imgPotencia" src="" alt="">
-        <p id="valorPotencia">%RSSI%</p>
-      </div>
-    </header>
-    <div style="height: 120px;"></div>
-
-    
+  <body>
+    <!--Barra de navegación-->
+    <nav class="sidebar-navigation">
+      <ul>
+        <li class="active">
+          <i class="fa fa-house"></i>
+          <span class="tooltip">Inicio</span>
+          <div class="indicador"></div>
+        </li>
+        <li>
+          <i class="fa fa-square"></i>
+          <span class="tooltip">Dashboard</span>
+        </li>
+        <li>
+          <i class="fa fa-file"></i>
+          <span class="tooltip">Reportes</span>
+        </li>
+      </ul>
+    </nav>
 
     <!--Contenido-->
-    <div style="padding: 5px; display: grid; grid-template-columns: 50% 50%;">
-      <div style="padding: 80px;">
-        <h2 style="font-family: 'Jost', sans-serif; font-size: 50px; color: rgb(80, 80, 80);">Garaje inteligente</h2>
-        <p style="font-size: 20px;">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor facere iusto rerum explicabo, odit, repellat reprehenderit aliquam quisquam, inventore eaque fugiat ea tempore fuga veniam hic quaerat ipsum ratione quas.</p>
-        <a href="menu.html">
-          <button type="submit" style="background-color: white; color: rgb(11, 138, 177); font-weight: 600; height: 40px;">Empezar ahora</button>
-        </a>
-        
-
-      </div>
-      <div>
-          <img src="./assets/home_gif.gif" alt="">
+    <div style="height: 20px"></div>
+    <div class="contain text-center">
+      <div class="row">
+        <div class="col texto">
+          <div>
+            <h1>Garaje inteligente</h1>
+            <p>El garaje automatizado es un sistema que permite abrir y cerrar la puerta del garaje de forma automática, mediante un control remoto o un sensor de movimiento.</p>
+            <p>YMN - TECNOLOGÍAS DE SEGURIDAD DESDE 2022</p>
+          </div>
+        </div>
+        <div class="col">
+          <img src="./assets/home_gif.gif" alt="" width="100%">
+        </div>
       </div>
     </div>
     <br><br>
-
-    
-
-    <!--Logo pinguino-->
-    <img id="piplup" src="https://raw.githubusercontent.com/MicaelaGordillo/IOT_2/main/EjemploST_3/images/logo/piplup.png" alt="">
-    
-    <!--Pie de página-->
-    <footer>
-      @Copyright MYN 2022- All Right Reserved.
-    </footer>
-  </body>
-</html>
-<br>
-    <hr>
+    <!--Funciones-->
+    <div class="text-center" style="margin-left: 100px; margin-right: 20px;">
+      <h2>Nuestras funciones</h2>
+      <br>
+      <p>Brindamos productos de alta calidad y el mejor servicio a miles de clientes en todo el mundo.</p>
+      <p> En YMN te ofrecemos las siguientes funciones...</p>
+    </div>
     <br>
+    <div class="card-group">
+      <div class="card puerta">
+        <div class="texto">
+          <img class="card-img-top" src="/assets/garaje.png" alt="Puerta">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Puerta automática</h5>
+          <p class="card-text">El seguro para puertas contra invitados no deseados</p>
+          <p class="card-text"><small class="text-muted">Tendrás el control de la puerta de tu garaje, con un simple boton podrás abrirlo y cerrarlo, además cuenta con un sensor que detecta que no haya ningún objeto mientras la puerta se esta cerrando.</small></p>
+        </div>
+      </div>
+        <div class="card foco">
+          <div class="texto">
+            <img class="card-img-top" src="/assets/foco.png" alt="Foco">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Luces</h5>
+            <p class="card-text">Internas y Externas</p>
+            <p class="card-text"><small class="text-muted">Tendrás el control para encender y apagara las luces internas y externas de tu garaje sin necesidad de salir de tu auto.</small></p>
+          </div>
+        </div>
+        <div class="card sensor">
+          <div class="texto">
+            <img class="card-img-top" src="/assets/sensor.png" alt="Sensor">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Sensor</h5>
+            <p class="card-text">Temperatura y Humedad</p>
+            <p class="card-text"><small class="text-muted">Tendrás un sensor en el interior del garaje que te indicara la temperatura y humedad cada 24hrs, o cada vez que el garaje sea abierto.</small></p>
+          </div>
+        </div>
+    </div>
+    <br><br>
     <!-- Fotitos de los integrantes y su información -->
-    <center><h2>Nuestro equipo de desarrollo:</h2></center>     
-    <div style="display: flex;">
+    <center><h2>Nuestro equipo de desarrollo:</h2></center>  
+    <br><br>   
+    <div style="display: flex; margin-left: 100px; margin-right: 20px;">
       <!-- Yamil -->
       <div class="profile-card yamil" style="margin: 0 auto;">
         <div class="img">
@@ -86,40 +123,25 @@
         </div>
       </div>
     </div>
-    <!-- Espacios -->
-    <br><br><br><br>
+    <br><br>
+
+    <!--Pie de página-->
+    <footer>
+      <div class="grupo-2">
+        <small>&copy; 2022 <b>YMN</b> - Todos los derechos reservados</small>
+      </div>
+    </footer>
+
+    <!--Scripts-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/d32f40f0ab.js" crossorigin="anonymous"></script>
     <script>
-      function updateTextInput(val, id) {
-        console.log(val);
-        document.getElementById('pwmInput'+id).value = val; 
-        document.getElementById('textInput'+id).value = val; 
-      }
-      //Función para cambiar la imagen en base a la conexión WiFi/
-      function actualizarPotencia(){
-        var valor = parseInt(document.getElementById("valorPotencia").innerText);
-        if (valor >= (-40)) {
-            document.getElementById("imgPotencia").src = "https://raw.githubusercontent.com/MicaelaGordillo/images_IoT/main/intensidad_wifi/wifi4.png";
-        } else if (valor <(-40) && valor >= (-50)) {
-            document.getElementById("imgPotencia").src = "https://raw.githubusercontent.com/MicaelaGordillo/images_IoT/main/intensidad_wifi/wifi3.png";
-        } else if (valor < (-50) && valor >= (-60)){
-            document.getElementById("imgPotencia").src = "https://raw.githubusercontent.com/MicaelaGordillo/images_IoT/main/intensidad_wifi/wifi2.png";
-        } else if (valor < (-60)){
-            document.getElementById("imgPotencia").src = "https://raw.githubusercontent.com/MicaelaGordillo/images_IoT/main/intensidad_wifi/wifi1.png";
-        }
-      }
-      //Función para pedir el valor de la conexión WiFi - cada 10 segundos/
-      setInterval(function ( ) {
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
-          if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("valorPotencia").innerText = this.responseText;
-            document.getElementById("valorRSSI").innerText = this.responseText;
-            actualizarPotencia();
-          }
-        };
-        xhttp.open("GET", "/RSSI", true);
-        xhttp.send();
-      }, 10000);
+      $('ul li').on('click', function() {
+        $('li').removeClass('active');
+        $('.indicador').visible = false;
+        $(this).addClass('active');
+        $(this).find('.indicador').visible = true;
+      });
     </script>
   </body>
 </html>
