@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://code.jquery.com/jquery-2.2.4.js"
+      integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/d32f40f0ab.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./dashboard.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <title>Dashboard</title>
+  </head>
+  <body>
+    <nav class="sidebar-navigation">
+      <ul>
+        <li>
+          <i class="fa fa-house"></i>
+          <span class="tooltip">Inicio</span>
+        </li>
+        <li class="active">
+          <i class="fa fa-square"></i>
+          <div class="indicador"></div>
+          <span class="tooltip">Dashboard</span>
+        </li>
+        <li>
+          <i class="fa fa-file"></i>
+          <span class="tooltip">Reportes</span>
+        </li>
+      </ul>
+    </nav>
+    <div class="principal">
+      <div class="row">
+        <div class="col-5 imagen">
+          <img src="./assets/garaje.webp" alt="" />
+        </div>
+        <div class="col">
+          <div class="titulo-img">
+            <img
+              src="./assets/low-temperature.png"
+              style="width: 80px"
+              alt=""
+            />
+            <h2 style="font-weight: bold">Temperatura</h2>
+          </div>
+          <div class="col-8 contenido-1">
+            <p>Actual:</p>
+            <h1>20ºC</h1>
+          </div>
+          <hr />
+          <div class="row">
+            <div class="col contenido-2">
+              <p>Minima de la semana:</p>
+              <div class="row" style="align-items: center">
+                <h1 class="col">15ºC</h1>
+                <i class="col fa-regular fa-snowflake icono1"></i>
+              </div>
+            </div>
+            <div class="col contenido-2">
+              <p>Máxima de la semana:</p>
+              <div class="row" style="align-items: center">
+                <h1 class="col">15ºC</h1>
+                <i class="col fa-regular fa-sun icono2"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">3 of 3</div>
+      </div>
+      <div class="row">
+        <div class="col-5" style="height: 57vh;">
+          <div class="titulo-img">
+            <img
+              src="./assets/control-panel.png"
+              style="width: 60px"
+              alt=""
+            />
+            <h2 style="font-weight: bold; font-size: 25px;">Panel de control</h2>
+          </div>
+          <div class="container text-center" style="height: 80%;">
+            <div class="row">
+              <div class="col">
+                <div class="contenedor-pc">
+                  <label class="toggle">
+                    <input class="toggle-checkbox" type="checkbox" onclick="cambiarColor(0)">
+                    <div class="toggle-switch"></div>
+                  </label>
+                  <img src="./assets/1043281.png" width="80px" alt="">
+                  <br><br>
+                  <strong style="font-size: 20px;">
+                  Luces externas
+                  </strong>
+                  <hr>
+                  <p style="font-size: 15px;">Estado: Encendido</p>
+                </div>
+              </div>
+              <div class="col" >
+                <div class="contenedor-pc">
+                  <label class="toggle">
+                    <input class="toggle-checkbox" type="checkbox" onclick="cambiarColor(1)">
+                    <div class="toggle-switch"></div>
+                  </label>
+                  <img src="./assets/controllers.png" width="80px" alt="">
+                  <br><br>
+                  <strong style="font-size: 20px;">Luces internas</strong>
+                  <hr>
+                  <p style="font-size: 15px;">Estado: Encendido</p>
+                </div>
+              </div>
+              </div>
+              <div class="row">
+              <div class="col">
+                <div class="contenedor-pc">
+                  <label class="toggle">
+                    <input class="toggle-checkbox" type="checkbox" onclick="cambiarColor(2)">
+                    <div class="toggle-switch"></div>
+                  </label>
+                  <img src="./assets/garage.png" width="80px" alt="">
+                  <br><br>
+                  <strong style="font-size: 20px;"> Puerta
+                  </strong>
+                  <hr>
+                  <p style="font-size: 15px;">Estado: Cerrado</p>
+                </div>
+              </div>
+              <div class="col">
+                <div class="contenedor-pc">
+                  <label class="toggle">
+                    <input class="toggle-checkbox" type="checkbox" onclick="cambiarColor(3)">
+                    <div class="toggle-switch"></div>
+                  </label>
+                  <img src="./assets/megaphone.png" width="70px" alt="">
+                  <br><br>
+                  <strong style="font-size: 20px;"> Alarma
+                  </strong>
+                  <hr>
+                  <p style="font-size: 15px;">Estado: Apagado</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">2 of 3</div>
+        <div class="col">3 of 3</div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      $("ul li").on("click", function () {
+        $("li").removeClass("active");
+        $(this).addClass("active");
+      });
+
+      function cambiarColor(id) {
+        var toogle = document.getElementsByClassName("toggle-checkbox")[id];
+        if(toogle.checked == false){
+          var elemento = document.getElementsByClassName("contenedor-pc")[id];
+          elemento.style.backgroundColor = "#161A20";
+        }else{
+          var elemento = document.getElementsByClassName("contenedor-pc")[id];
+          elemento.style.backgroundColor = "rgba(70, 187, 70, 0.849)";
+        }
+        
+      }
+    </script>
+  </body>
+</html>
