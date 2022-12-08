@@ -101,7 +101,7 @@ body{
   width: 99.5vw;
 }
 .imagen{
-  height: 39vh;
+  min-height: 39vh;
   width: 100%;
   overflow: hidden;
   padding: 0 !important;
