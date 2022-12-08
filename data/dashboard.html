@@ -115,8 +115,11 @@
           <div class="container text-center" style="height: 80%; max-height: fit-content;">
             <div class="row">
               <div class="col">
+                
                 <div class="contenedor-pc">
+                  
                   <label class="toggle">
+                    
                     <input
                       class="toggle-checkbox"
                       type="checkbox"
@@ -215,6 +218,21 @@
           var elemento = document.getElementsByClassName("contenedor-pc")[id];
           elemento.style.backgroundColor = "rgba(70, 187, 70, 0.849)";
         }
+        if(id==0){
+          if (toogle.checked == false) {
+            location.href="/LE_OFF";
+          }else{
+            location.href="/LE_ON";
+          }
+          
+        }else if(id==1){
+          if (toogle.checked == false) {
+            location.href="/LI_OFF";
+          }else{
+            location.href="/LI_ON";
+          }
+        }
+
       }
       Highcharts.theme = {
         colors: [
