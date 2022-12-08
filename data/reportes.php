@@ -1,3 +1,12 @@
+<?php
+    $con = mysqli_connect('localhost', 'root', '', 'garaje_inteligente');
+    $sql = "SELECT `registro_id`, `dia`, `hora`, `estado` FROM `registro` ORDER BY `registro_id`";
+    $resultado = $con->query($sql);
+    $sql2 = "SELECT `temperatura_id`, `dia`, `hora`, `valor` FROM `temperatura` ORDER BY `temperatura_id`";
+    $resultado2 = $con->query($sql2);
+    $sql3 = "SELECT `humedad_id`, `dia`, `hora`, `valor` FROM `humedad` ORDER BY `humedad_id`";
+    $resultado3 = $con->query($sql3);
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -57,42 +66,21 @@
                     <th>DÍA</th>
                     <th>HORA</th>
                 </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Entrada</td>
-                    <td>01/01/2021</td>
-                    <td>12:00</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Salida</td>
-                    <td>01/01/2021</td>
-                    <td>12:00</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Entrada</td>
-                    <td>01/01/2021</td>
-                    <td>12:00</td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>Entrada</td>
-                    <td>01/01/2021</td>
-                    <td>12:00</td>
-                </tr>
-                <tr>
-                    <td>5</td>
-                    <td>Salida</td>
-                    <td>01/01/2021</td>
-                    <td>12:00</td>
-                </tr>
-                <tr>
-                    <td>6</td>
-                    <td>Entrada</td>
-                    <td>01/01/2021</td>
-                    <td>12:00</td>
-                </tr>
+                <?php 
+                while($row = $resultado->fetch_array(MYSQLI_ASSOC)) { ?>
+					<tr>
+						<td><?php echo $row['registro_id']; ?></td>
+                        <td><?php 
+                        if($row['estado']==1)
+                            echo "Entrada";
+                        else
+                            echo "Salida"; ?>
+                        </td>
+                        <td><?php echo $row['dia']; ?></td>
+                        <td><?php echo $row['hora']; ?></td>
+                    </tr>
+                <?php } 
+                ?>
             </table>
         </div>
         <br><br>
@@ -109,30 +97,16 @@
                     <th>DÍA</th>
                     <th>HORA</th>
                 </tr>
-                <tr>
-                    <td>1</td>
-                    <td>25°C</td>
-                    <td>01/01/2021</td>
-                    <td>12:00</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>25°C</td>
-                    <td>01/01/2021</td>
-                    <td>12:00</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>25°C</td>
-                    <td>01/01/2021</td>
-                    <td>12:00</td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>25°C</td>
-                    <td>01/01/2021</td>
-                    <td>12:00</td>
-                </tr>
+                <?php 
+                while($row2 = $resultado2->fetch_array(MYSQLI_ASSOC)) { ?>
+					<tr>
+						<td><?php echo $row2['temperatura_id']; ?></td>
+                        <td><?php echo $row2['valor']; ?> °C</td>
+                        <td><?php echo $row2['dia']; ?></td>
+                        <td><?php echo $row2['hora']; ?></td>
+                    </tr>
+                <?php } 
+                ?>
             </table>
             <!--Tabla - Humedad-->
             <table>
@@ -145,30 +119,16 @@
                     <th>DÍA</th>
                     <th>HORA</th>
                 </tr>
-                <tr>
-                    <td>1</td>
-                    <td>25°C</td>
-                    <td>01/01/2021</td>
-                    <td>12:00</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>25°C</td>
-                    <td>01/01/2021</td>
-                    <td>12:00</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>25°C</td>
-                    <td>01/01/2021</td>
-                    <td>12:00</td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>25°C</td>
-                    <td>01/01/2021</td>
-                    <td>12:00</td>
-                </tr>
+                <?php 
+                while($row3 = $resultado3->fetch_array(MYSQLI_ASSOC)) { ?>
+					<tr>
+						<td><?php echo $row3['humedad_id']; ?></td>
+                        <td><?php echo $row3['valor']; ?> g/m3</td>
+                        <td><?php echo $row3['dia']; ?></td>
+                        <td><?php echo $row3['hora']; ?></td>
+                    </tr>
+                <?php } 
+                ?>
             </table>
         </div>
     </div>
