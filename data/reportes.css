@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
+/* ---- */
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: 'Nunito', sans-serif;
+    line-height: 1;
+}
+body, #contenido{
+    background-color: #161A20 !important;
+}
+  
+/*Barra de navegación*/
+.sidebar-navigation {
+    display: inline-block;
+    min-height: 100vh;
+    width: 80px;
+    background-color: #313443;
+    position: fixed;
+}
+.sidebar-navigation ul {
+    text-align: center;
+    color: white;
+    padding-left: 0px;
+}
+.sidebar-navigation ul li {
+    padding: 28px 0;
+    cursor: pointer;
+    transition: all ease-out 120ms;
+    position: relative;
+}
+.sidebar-navigation ul li i {
+    display: block;
+    font-size: 24px;
+    transition: all ease 450ms;
+}
+.sidebar-navigation ul li .tooltip {
+    display: inline-block;
+    position: absolute;
+    background-color: #313443;
+    padding: 8px 15px;
+    border-radius: 3px;
+    margin-top: -26px;
+    left: 90px;
+    opacity: 0;
+    visibility: hidden;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+}
+.sidebar-navigation ul li .tooltip:before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: -4px;
+    top: 10px;
+    transform: rotate(45deg);
+    width: 10px;
+    height: 10px;
+    background-color: inherit;
+}
+.sidebar-navigation ul li:hover {
+    background-color: #22252E;
+}
+.sidebar-navigation ul li:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+.sidebar-navigation ul li.active {
+    background-color: #22252E;
+}
+.sidebar-navigation ul li.active i {
+    color: #36A2D4;
+    text-shadow: 0 0 5px #36A2D4;
+}
+.indicador{
+    box-shadow: 0 0 4px #36A2D4,
+    0 0 11px #36A2D4,
+    0 0 19px #36A2D4;
+    position: absolute; 
+    top:15px; 
+    left: 2px; 
+    border-radius: 2px; 
+    background-color: #36A2D4; 
+    height: 50px; 
+    width: 5px;
+}
+
+/*Contenido*/
+.contain {
+    margin-left: 100px !important;
+    margin-right: 0px !important;
+    max-width: 1200px;
+}
+.row {
+    border-radius: 10px;
+}
+.texto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h1 {
+    font-size: 3.5vw !important;
+    font-weight: 700 !important;
+    color: #fff;
+}
+p {
+    font-size: 1.3vw !important;
+    font-weight: 400 !important;
+    color: #fff;
+}
+
+/*Tabla*/
+.tabla {
+    margin-left: 200px;
+    margin-right: 120px;
+    border-radius: 10px;
+    color: #fff;
+}
+table {
+    width: 100%;
+    border: 1px solid #cca9dd;
+    border-radius: 3px;
+    font-family: 'Urbanist', sans-serif;
+    text-align: center;
+    border-spacing: 6px !important;
+    border-collapse: separate !important;
+}
+th {
+    color: #fff;
+    padding: 15px 20px;
+    background-color: #22252E;
+    border: 1px solid #ffffff !important;
+    border-radius: 3px;
+}
+td {
+    color: rgb(165, 165, 165);
+    padding: 15px 20px;
+    border: 1px solid #ffffff !important;
+    border-radius: 3px;
+}
