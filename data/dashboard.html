@@ -20,6 +20,9 @@
       integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
       crossorigin="anonymous"
     />
+
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <!-- <script src="https://code.highcharts.com/themes/dark-unica.js"></script> -->
     <title>Dashboard</title>
   </head>
   <body>
@@ -42,8 +45,9 @@
     </nav>
     <div class="principal">
       <div class="row">
-        <div class="col-5 imagen">
-          <img src="./assets/garaje.webp" alt="" />
+        <div class="col-5 imagen" style="position: relative;">
+          <img src="./assets/garaje.webp" style="filter: brightness(0.6);"/>
+          <h1 style="position: absolute; bottom:0; font-weight:bold; margin: 20px;">Bienvenido!</h1>
         </div>
         <div class="col">
           <div class="titulo-img">
@@ -76,83 +80,113 @@
             </div>
           </div>
         </div>
-        <div class="col">3 of 3</div>
+        <div class="col" style="padding: 30px 20px;">
+          <img src="./assets/dia-nublado.png" style="position: absolute; width: 80px; right: 50px;" alt="">
+          <h2 style="font-weight: bold;">Buen día!</h2>
+          <h4>Datos diarios: </h4>
+          <ul>
+            <li style="margin: 30px 0;">
+              ✅
+              <span>Número de entradas: 6</span>
+            </li>
+            <li style="margin: 30px 0;">
+              ✅
+              <span>Temperatura: 12ºC</span>
+            </li>
+            <li style="margin: 30px 0;">
+              ✅
+              <span>Humedad: 12  g/m³</span>
+            </li>
+            
+          </ul>
+          <hr>
+          <p>Si presentas algún incoveniente, no dudes en ponerte en contacto con nosotros 🤗</p>
+
+        </div>
       </div>
       <div class="row">
-        <div class="col-5" style="height: 57vh;">
+        <div class="col-5" style="height: 57vh">
           <div class="titulo-img">
-            <img
-              src="./assets/control-panel.png"
-              style="width: 60px"
-              alt=""
-            />
-            <h2 style="font-weight: bold; font-size: 25px;">Panel de control</h2>
+            <img src="./assets/control-panel.png" style="width: 60px" alt="" />
+            <h2 style="font-weight: bold; font-size: 25px">Panel de control</h2>
           </div>
-          <div class="container text-center" style="height: 80%;">
+          <div class="container text-center" style="height: 80%">
             <div class="row">
               <div class="col">
                 <div class="contenedor-pc">
                   <label class="toggle">
-                    <input class="toggle-checkbox" type="checkbox" onclick="cambiarColor(0)">
+                    <input
+                      class="toggle-checkbox"
+                      type="checkbox"
+                      onclick="cambiarColor(0)"
+                    />
                     <div class="toggle-switch"></div>
                   </label>
-                  <img src="./assets/1043281.png" width="80px" alt="">
-                  <br><br>
-                  <strong style="font-size: 20px;">
-                  Luces externas
-                  </strong>
-                  <hr>
-                  <p style="font-size: 15px;">Estado: Encendido</p>
-                </div>
-              </div>
-              <div class="col" >
-                <div class="contenedor-pc">
-                  <label class="toggle">
-                    <input class="toggle-checkbox" type="checkbox" onclick="cambiarColor(1)">
-                    <div class="toggle-switch"></div>
-                  </label>
-                  <img src="./assets/controllers.png" width="80px" alt="">
-                  <br><br>
-                  <strong style="font-size: 20px;">Luces internas</strong>
-                  <hr>
-                  <p style="font-size: 15px;">Estado: Encendido</p>
-                </div>
-              </div>
-              </div>
-              <div class="row">
-              <div class="col">
-                <div class="contenedor-pc">
-                  <label class="toggle">
-                    <input class="toggle-checkbox" type="checkbox" onclick="cambiarColor(2)">
-                    <div class="toggle-switch"></div>
-                  </label>
-                  <img src="./assets/garage.png" width="80px" alt="">
-                  <br><br>
-                  <strong style="font-size: 20px;"> Puerta
-                  </strong>
-                  <hr>
-                  <p style="font-size: 15px;">Estado: Cerrado</p>
+                  <img src="./assets/1043281.png" width="80px" alt="" />
+                  <br /><br />
+                  <strong style="font-size: 20px"> Luces externas </strong>
+                  <hr />
+                  <p style="font-size: 15px">Estado: Encendido</p>
                 </div>
               </div>
               <div class="col">
                 <div class="contenedor-pc">
                   <label class="toggle">
-                    <input class="toggle-checkbox" type="checkbox" onclick="cambiarColor(3)">
+                    <input
+                      class="toggle-checkbox"
+                      type="checkbox"
+                      onclick="cambiarColor(1)"
+                    />
                     <div class="toggle-switch"></div>
                   </label>
-                  <img src="./assets/megaphone.png" width="70px" alt="">
-                  <br><br>
-                  <strong style="font-size: 20px;"> Alarma
-                  </strong>
-                  <hr>
-                  <p style="font-size: 15px;">Estado: Apagado</p>
+                  <img src="./assets/controllers.png" width="80px" alt="" />
+                  <br /><br />
+                  <strong style="font-size: 20px">Luces internas</strong>
+                  <hr />
+                  <p style="font-size: 15px">Estado: Encendido</p>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="contenedor-pc">
+                  <label class="toggle">
+                    <input
+                      class="toggle-checkbox"
+                      type="checkbox"
+                      onclick="cambiarColor(2)"
+                    />
+                    <div class="toggle-switch"></div>
+                  </label>
+                  <img src="./assets/garage.png" width="80px" alt="" />
+                  <br /><br />
+                  <strong style="font-size: 20px"> Puerta </strong>
+                  <hr />
+                  <p style="font-size: 15px">Estado: Cerrado</p>
+                </div>
+              </div>
+              <div class="col">
+                <div class="contenedor-pc">
+                  <label class="toggle">
+                    <input
+                      class="toggle-checkbox"
+                      type="checkbox"
+                      onclick="cambiarColor(3)"
+                    />
+                    <div class="toggle-switch"></div>
+                  </label>
+                  <img src="./assets/megaphone.png" width="70px" alt="" />
+                  <br /><br />
+                  <strong style="font-size: 20px"> Alarma </strong>
+                  <hr />
+                  <p style="font-size: 15px">Estado: Apagado</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="col">2 of 3</div>
-        <div class="col">3 of 3</div>
+        <div class="col" id="chart-temp" style="padding: 10px"></div>
+        <div class="col" id="chart-hum" style="padding: 10px"></div>
       </div>
     </div>
     <script
@@ -169,15 +203,234 @@
 
       function cambiarColor(id) {
         var toogle = document.getElementsByClassName("toggle-checkbox")[id];
-        if(toogle.checked == false){
+        if (toogle.checked == false) {
           var elemento = document.getElementsByClassName("contenedor-pc")[id];
           elemento.style.backgroundColor = "#161A20";
-        }else{
+        } else {
           var elemento = document.getElementsByClassName("contenedor-pc")[id];
           elemento.style.backgroundColor = "rgba(70, 187, 70, 0.849)";
         }
-        
       }
+      Highcharts.theme = {
+        colors: [
+          "#058DC7",
+          "#50B432",
+          "#ED561B",
+          "#DDDF00",
+          "#24CBE5",
+          "#64E572",
+          "#FF9655",
+          "#FFF263",
+          "#6AF9C4",
+        ],
+        chart: {
+          backgroundColor: {
+            linearGradient: [0, 0, 500, 500],
+            stops: [
+              [0, "#1F212D"],
+              [1, "#1F212D"],
+            ],
+          },
+        },
+        title: {
+          style: {
+            color: "#fff",
+            font: 'bold 20px "Nunito", Verdana, sans-serif',
+          },
+        },
+        subtitle: {
+          style: {
+            color: "#666666",
+            font: 'bold 12px "Nunito", Verdana, sans-serif',
+          },
+        },
+        legend: {
+          itemStyle: {
+            font: "9pt Nunito, Verdana, sans-serif",
+            color: "black",
+          },
+          itemHoverStyle: {
+            color: "gray",
+          },
+        },
+      };
+      Highcharts.setOptions(Highcharts.theme);
+      Highcharts.chart("chart-temp", {
+        chart: {
+          type: "column",
+        },
+        title: {
+          align: "left",
+          text: "Temperatura de la semana",
+        },
+        accessibility: {
+          announceNewData: {
+            enabled: true,
+          },
+        },
+        xAxis: {
+          type: "category",
+        },
+        yAxis: {
+          title: {
+            text: "Temperatura",
+          },
+        },
+        legend: {
+          enabled: false,
+        },
+        plotOptions: {
+          series: {
+            borderWidth: 0,
+            dataLabels: {
+              enabled: true,
+              format: "{point.y:.1f}ºC",
+            },
+          },
+        },
+
+        tooltip: {
+          headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+          pointFormat:
+            '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}%</b> of total<br/>',
+        },
+        colors: [
+          "#FE972D",
+          "#F53D74",
+          "#862DFD",
+          "#2FC0FF",
+          "#FCE442",
+          "#3192F7",
+          "#96FF2F",
+        ],
+        series: [
+          {
+            name: "Valores",
+            colorByPoint: true,
+            data: [
+              {
+                name: "08/12/22",
+                y: 23.06,
+                drilldown: "Chrome",
+              },
+              {
+                name: "09/12/22",
+                y: 19.84,
+                drilldown: "Safari",
+              },
+              {
+                name: "10/12/22",
+                y: 4.18,
+                drilldown: "Firefox",
+              },
+              {
+                name: "11/12/22",
+                y: 4.12,
+                drilldown: "11/12/22",
+              },
+              {
+                name: "12/12/22",
+                y: 2.33,
+                drilldown: "12/12/22",
+              },
+              {
+                name: "13/12/22",
+                y: 0.45,
+                drilldown: "13/12/22",
+              },
+              {
+                name: "14/12/22",
+                y: 15.582,
+                drilldown: "14/12/22",
+              },
+            ],
+          },
+        ],
+        credits: {
+          enabled: false,
+        },
+        drilldown: {
+          breadcrumbs: {
+            position: {
+              align: "right",
+            },
+          },
+        },
+      });
+      // Humedad
+      Highcharts.chart("chart-hum", {
+        chart: {
+          type: "bar",
+        },
+        title: {
+          text: "Humedad",
+        },
+        yAxis: {
+          min: 0,
+          title: {
+            text: "Valor humedad (g/m³)",
+            align: "high",
+          },
+          labels: {
+            overflow: "justify",
+          },
+        },
+        tooltip: {
+          valueSuffix: "g/m³",
+        },
+        plotOptions: {
+          bar: {
+            dataLabels: {
+              enabled: true,
+            },
+          },
+        },
+        legend: {
+          layout: "vertical",
+          align: "right",
+          verticalAlign: "top",
+          x: -40,
+          y: 80,
+          floating: true,
+          borderWidth: 1,
+          backgroundColor:
+            Highcharts.defaultOptions.legend.backgroundColor || "#FFFFFF",
+          shadow: true,
+        },
+        credits: {
+          enabled: false,
+        },
+        series: [
+          {
+            name: "08/12/22",
+            data: [631],
+          },
+          {
+            name: "09/12/22",
+            data: [814],
+          },
+          {
+            name: "10/12/22",
+            data: [1044],
+          },
+          {
+            name: "11/12/22",
+            data: [1276],
+          },
+          {
+            name: "12/12/22",
+            data: [1501],
+          },
+          {
+            name: "13/12/22",
+            data: [1727],
+          },
+          {
+            name: "14/12/22",
+            data: [1952],
+          },
+        ],
+      });
     </script>
   </body>
 </html>
